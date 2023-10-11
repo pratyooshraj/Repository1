@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab-1</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      function publishToTable() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const age = document.getElementById("age").value;
+        const tableHtml =
+          '<table border="1">' +
+          "<tr><th>Name:</th><th>Email:</th><th>Age:</th></tr>" +
+          "<tr><td>" +
+          name +
+          "</td><td>" +
+          email +
+          "</td><td>" +
+          age +
+          "</td></tr>" +
+          "</table>";
+        document.getElementById("tables").innerHTML = tableHtml;
+      }
+      function publishToTable2() {
+        const name = document.getElementById("username").value;
+        const email = document.getElementById("email2").value;
+        const password = document.getElementById("password").value;
+        const age = document.getElementById("age2").value;
+        const genderFetch = document.getElementsByName("gender");
+        let gender;
+        for (i = 0; i < genderFetch.length; i++) {
+          if (genderFetch[i].checked) gender = genderFetch[i].value;
+        }
+        const hobbyFetch = document.getElementsByName("hobby");
+        var hobby = "";
+        for (i = 0; i < hobbyFetch.length; i++) {
+          if (hobbyFetch[i].checked) hobby += hobbyFetch[i].value + ",";
+        }
+        selectElement = document.querySelector("#country");
+        const country = selectElement.value;
+        const tableHtml =
+          '<table border="1">' +
+          "<tr><th>Username:</th><th>Email:</th><th>Password:</th><th>Age:</th><th>Gender:</th><th>Hobby:</th><th>Country:</th></tr>" +
+          "<tr><td>" +
+          name +
+          "</td><td>" +
+          email +
+          "</td><td>" +
+          password +
+          "</td><td>" +
+          age +
+          "</td><td>" +
+          gender +
+          "</td><td>" +
+          hobby +
+          "</td><td>" +
+          country +
+          "</td></tr>" +
+          "</table>";
+        document.getElementById("tables").innerHTML = tableHtml;
+      }
+    </script>
+  </head>
+  <body>
+    <!-- inner HTML use garne -->
+    <div id="tables"></div>
+    <!-- normal picture insertion -->
+    <div id="q1">
+      <h2>Qns 1</h2>
+      <p>This is a paragraph for qns no 1, with the picture inserted below:</p>
+      <img src="./mb.svg" alt="picture inserted" />
+    </div>
+    <!-- input from a form displayed in a table -->
+    <div id="q2">
+      <h2>Qns 2</h2>
+      <form action="" method="post">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" /> <br />
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" /><br />
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" /><br />
+        <input
+          type="submit"
+          value="Submit"
+          onclick="publishToTable(); return false;"
+        />
+      </form>
+    </div>
+    <!-- anchor tags -->
+    <div id="q3">
+      <h2>Qns 3</h2>
+      <nav>
+        <ul>
+          <li><a href="https://w3schools.com">w3</a></li>
+          <li><a href="https://facebook.com">Facebook</a></li>
+          <li><a href="https://reddit.com">Reddit</a></li>
+          <li><a href="https://instagram.com">Instagram</a></li>
+          <li><a href="https://web.whatsapp.com">Whatsapp</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- navigation within the webpage itself -->
+    <div id="q4">
+      <h2>Qns 4</h2>
+      <nav>
+        <ul>
+          <li><a href="#q1">Question-1</a></li>
+          <li><a href="#q2">Question-2</a></li>
+          <li><a href="#q3">Question-3</a></li>
+          <li><a href="#q4">Question-4</a></li>
+          <li><a href="#q5">Question-5</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- iframe -->
+    <div id="q5">
+      <h2>Qns 5</h2>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/pPoQx8sh7P0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <!-- validation and publish form input to table -->
+    <div id="q6">
+      <h2>Qns 6</h2>
+      <form action="" method="post" id="secondForm">
+        <label for="name">Username: </label>
+        <input type="text" name="username" id="username" /> <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" /><br />
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email2" /><br />
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age2" /><br />
+        <label for="radio">Gender:</label> <br />
+        <input type="radio" id="gender1" name="gender" value="M" />
+        <label for="gender1">Male</label><br />
+        <input type="radio" id="gender2" name="gender" value="F" />
+        <label for="gender2">Female</label><br />
+
+        <label for="checkbox">Hobbies:</label> <br />
+        <input type="checkbox" name="hobby" id="hobby1" value="Sing" />
+        <label for="hobby1">Singing</label>
+        <input type="checkbox" name="hobby" id="hobby2" value="Dance" />
+        <label for="hobby2">Dancing</label>
+        <input type="checkbox" name="hobby" id="hobby3" value="Sports" />
+        <label for="hobby3">Sports</label> <br />
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="usa">United States</option>
+          <option value="canada">Canada</option>
+          <option value="uk">United Kingdom</option>
+          <option value="australia">Australia</option>
+          <option value="japan">Japan</option>
+        </select>
+        <br />
+        <input
+          type="submit"
+          value="submit"
+          onclick="publishToTable2(); return false;"
+        />
+      </form>
+    </div>
+    <!-- hidden answers using summary and details -->
+    <div id="q7">
+      <h2>Qns 7</h2>
+      <h3>FAQ</h3>
+      <ul id="faq">
+        <li>
+          <details>
+            <summary>2+2 = ?</summary>
+            Four.
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>2*2 = ?</summary>
+            Four.
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>2-2 = ?</summary>
+            Zero.
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>2/2 = ?</summary>
+            One.
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>2mod2 = ?</summary>
+            Zero.
+          </details>
+        </li>
+      </ul>
+    </div>
+    <!-- colspan and rowspan -->
+    <div id="q8">
+      <h2>Qns 8</h2>
+      <table border="1" cellpadding="10">
+        <tr>
+          <td colspan="6">a</td>
+          <td>b</td>
+          <td colspan="3" rowspan="3">c</td>
+        </tr>
+        <tr>
+          <td colspan="3">d</td>
+          <td rowspan="2">e</td>
+          <td colspan="2">f</td>
+          <td>g</td>
+        </tr>
+        <tr>
+          <td colspan="3" rowspan="2">j</td>
+          <td colspan="2">h</td>
+          <td>i</td>
+        </tr>
+        <tr>
+          <td colspan="4">k</td>
+          <td colspan="3">l</td>
+        </tr>
+        <tr>
+          <td colspan="3">m</td>
+          <td>n</td>
+          <td colspan="6">o</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
